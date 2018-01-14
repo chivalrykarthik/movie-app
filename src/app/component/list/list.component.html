@@ -1,0 +1,31 @@
+<div class="row">
+
+  <div class="col-md-{{updCol || actualCol}}" *ngFor="let up of movies" style="position:relative;z-index:1;" >
+      <div class="thumbnail movie-card" [ngClass]="{hoverClass:helpCass[up.id]=='in'}" (mouseenter)="toggleHelpMenu(up.id)"
+          (mouseleave)="toggleHelpMenu(up.id)">
+          <!--<a href="Javascript:void(0)" target="_blank">-->
+
+          <img class="movie-poster" src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{up.poster_path}}" alt="Lights" style="width:100%">
+          <!--<div class="caption" style="height:150px;overflow:hidden;" [@slideInOut]="helpMenuOpen[up.id] || out">-->
+          <div class="caption">
+              <p class="movie-rating">Rating:{{up.vote_average}}
+                  <span style="float:right">
+                      <button class="btn" [ngClass]="{'btn-success':(!recMovies || !recMovies.length || recMovies.indexOf(up.id.toString())==-1),'btn-danger':(recMovies && recMovies.length && recMovies.indexOf(up.id.toString())>=0)}"
+                          (click)="recommend(up,$event)">{{(recMovies && recMovies.length && recMovies.indexOf(up.id.toString())>=0)?"Unrecommend":"Recommend"}}</button>
+                  </span>
+              </p>
+
+          </div>
+          <div class="caption" style="height:150px;overflow:hidden;" [@slideInOut]="helpMenuOpen[up.id] || out">
+              <h3 class="movie-title">{{up.title}}</h3>
+              <p class="movie-description">{{up.overview}}</p>
+
+
+          </div>
+
+          <!--</a>-->
+
+      </div>
+  </div>
+
+</div>
