@@ -34,7 +34,7 @@ export class DataService {
   }
 
   public searchMoviesByName(key) {
-    let formatUrl = this.routeconst.baseUrlSearch + '?' + this.routeconst.api_Key + "&query=" + key;
+    let formatUrl = this.routeconst.baseUrlSearch + '?' + this.routeconst.api_Key + "&query=" + key + "&include_adult=true";
     return this.http.get(formatUrl).map(res => res.json());
   }
   public addRecommendation(movie) {
