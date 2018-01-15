@@ -6,15 +6,15 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-//import { RecommendationComponent } from './recommendation/recommendation.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { DataService } from './service/data.service';
 import {ListComponent} from './component/list/list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RecommendationComponent } from './component/recommendation/recommendation.component';
 @NgModule({
   declarations: [
     AppComponent,
-    //RecommendationComponent,
+    RecommendationComponent,
     DashboardComponent,
     ListComponent
   ],

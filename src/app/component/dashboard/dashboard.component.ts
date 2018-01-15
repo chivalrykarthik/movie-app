@@ -1,6 +1,6 @@
 import { DataService } from './../../service/data.service';
 import { Component, OnInit } from '@angular/core';
-//import { RecommendationComponent } from './../recommendation/recommendation.component';
+import { RecommendationComponent } from './../../component/recommendation/recommendation.component';
 @Component({
 
 	templateUrl: './dashboard.component.html',
@@ -17,7 +17,7 @@ export class DashboardComponent implements OnInit {
 	constructor(private ds: DataService) {
 		this.pageTitle = "DashBoard";
 
-		//this.recommendations = new RecommendationComponent(ds);
+		this.recommendations = new RecommendationComponent(ds);
 
 
 	}
@@ -45,19 +45,13 @@ export class DashboardComponent implements OnInit {
 
 	getUpcomingMovies() {
 		this.ds.getUpcomingMovies().subscribe((res) => {
-
 			if (!res || !res.results || !res.results.length) {
 				return console.log('No records found');
 			}
-
-
 			var upcoming = res;
-
 			if (upcoming && upcoming.results && upcoming.results.length) {
 				this.upcomingMovies = upcoming.results;
 			}
-
-
 		});
 	}
 
@@ -98,7 +92,7 @@ export class DashboardComponent implements OnInit {
 		/*if (upcoming && upcoming.results && upcoming.results.length) {
 			this.upcomingMovies = upcoming.results;
 		}*/
-		//this.getRecommendations();
+		this.getRecommendations();
 
 		//})
 	}

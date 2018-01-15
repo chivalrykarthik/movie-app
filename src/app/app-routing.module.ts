@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-//import { RecommendationComponent } from './recommendation/recommendation.component';
+import { RecommendationComponent } from './component/recommendation/recommendation.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 
 const routes: Routes = [
-  //{path: 'my-recommendations', component: RecommendationComponent },
+  {path: 'my-recommendations', component: RecommendationComponent },
   {path: 'dashboard', component: DashboardComponent },
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
 ];
