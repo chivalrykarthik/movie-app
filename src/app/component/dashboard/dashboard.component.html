@@ -23,13 +23,16 @@
     </nav>
   
     <div [hidden]="hideElement!=1">
+      <h4>Trending</h4>
       <list-movies [movies]="popularMovies" [getRecommendation]="getRecommendations.bind(this)"></list-movies>
   
     </div>
     <div [hidden]="hideElement!=2">
+        <h4>Forthcoming</h4>
       <list-movies [movies]="upcomingMovies" [getRecommendation]="getRecommendations.bind(this)" ></list-movies>
     </div>
     <div [hidden]="hideElement!=3">
+        <h4>Recommendation</h4>
       <list-movies [movies]="recommendations.recommendations" [getRecommendation]="getRecommendations.bind(this)"></list-movies>
     </div>
     
