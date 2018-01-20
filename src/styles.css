@@ -125,22 +125,31 @@ pm-app div.panel.panel-primary {
   z-index: 1;  
 }
 .hoverClass{
-  /*position: relative;  
   
-  width: unset;
-  z-index: 10000;  */
+}
 
-  position:relative;
-  /*left: 0px;
-  top: 10px;
-  width: 100px;
-  height: 100px;
-  background:yellow;*/
-  z-index: 4;
 
-  /*-webkit-box-shadow: 0px 6px 6px 0px rgba(213,213,213,0.6);
-  -moz-box-shadow: 0px 6px 6px 0px rgba(213,213,213,0.6);
-  -ms-box-shadow: 0px 6px 6px 0px rgba(213,213,213,0.6);
-  -o-box-shadow: 0px 6px 6px 0px rgba(213,213,213,0.6);
-  box-shadow: 0px 6px 6px 0px rgba(213,213,213,0.6);*/
+::-webkit-scrollbar {
+  width: 0.5em;
+  /*height: 2em*/
+}
+::-webkit-scrollbar-button {
+  background: #ccc
+}
+::-webkit-scrollbar-track-piece {
+  background: #eee
+}
+::-webkit-scrollbar-thumb {
+  
+  background: #888
+}
+
+.myCap{
+  height:200px;
+  overflow:hidden;
+}
+
+.myCap:hover{
+  height:200px;
+  overflow:auto;
 }

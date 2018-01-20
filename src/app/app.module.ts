@@ -11,12 +11,14 @@ import { DataService } from './service/data.service';
 import {ListComponent} from './component/list/list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RecommendationComponent } from './component/recommendation/recommendation.component';
+import { PopupComponent } from './component/popup/popup.component';
 @NgModule({
   declarations: [
     AppComponent,
     RecommendationComponent,
     DashboardComponent,
-    ListComponent
+    ListComponent,
+    PopupComponent
   ],
   imports: [
     BrowserModule,

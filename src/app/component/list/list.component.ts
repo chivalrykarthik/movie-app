@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { DataService } from '../../service/data.service';
+//import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+
 import {
     trigger,
     state,
@@ -7,10 +9,9 @@ import {
     animate,
     transition
 } from '@angular/animations';
-@Component({
-    selector: "list-movies",
-    templateUrl: './list.component.html',
-    providers: [DataService],
+//import { PopupComponent } from '../popup/popup.component';
+/*
+,
     animations: [
         trigger('slideInOut', [
             state('in', style({
@@ -27,6 +28,11 @@ import {
             transition('out => in', animate('400ms ease-in-out'))
         ])
     ]
+*/
+@Component({
+    selector: "list-movies",
+    templateUrl: './list.component.html',
+    providers: [DataService]
 })
 export class ListComponent {
     @Input('movies') movies: any;
@@ -34,8 +40,11 @@ export class ListComponent {
     @Input('updParCol') updParCol: any;
     @Input('getRecommendation') getRecommendation: any;
     @Input('recMovies') recMovies: any;
+    visible = true;
     helpMenuOpen = {}; helpCass = {};
-    constructor(private ds: DataService) { }
+    constructor(private ds: DataService) { 
+
+    }
     public pageTitle: string;
     public actualCol = 3;
     public actualParCol = 12;
@@ -44,7 +53,18 @@ export class ListComponent {
         // this.helpMenuOpen = 'out';
     }
 
-    toggleHelpMenu(id): void {
+    /*openDialog(): void {
+        let dialogRef = this.dialog.open(PopupComponent, {
+          width: '250px',
+          data: { name: "this.name", animal:" this.animal" }
+        });
+    
+        dialogRef.afterClosed().subscribe(result => {
+          console.log('The dialog was closed');
+          //this.animal = result;
+        });
+      }*/
+    /*toggleHelpMenu(id): void {
         console.log(id);
         var self = this;
         if (this.helpMenuOpen[id]) {
@@ -70,6 +90,15 @@ export class ListComponent {
         }
 
 
+    }*/
+
+    public viewMore(id){
+        let self = this;
+        if (this.helpCass[id]) {
+            this.helpCass[id] = false;            
+        } else {
+            this.helpCass[id] = true;
+        }
     }
     public recommend(movie, event) {
         console.log(movie);
