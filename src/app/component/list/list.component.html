@@ -4,7 +4,7 @@
       <div  class="thumbnail movie-card" >
           <!--<a href="Javascript:void(0)" target="_blank">-->
 
-          <img class="movie-poster" src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{up.poster_path}}" alt="Lights" style="width:100%">
+          <img class="movie-poster" src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{up.poster_path}}" onError = "this.src='./assets/img/noImage.jpg'"alt="Lights" style="width:100%">
           <!--<div class="caption" style="height:150px;overflow:hidden;" [@slideInOut]="helpMenuOpen[up.id] || out">-->
           <div class="caption"> 
               <p class="movie-rating">Rating:{{up.vote_average}}
@@ -22,17 +22,11 @@
 
           </div>
 
-          <!--<div class="caption" [hidden]="visible" style="height:150px;overflow:auto;" (mouseleave)="visible=true" >
-            <h3 class="movie-title">{{up.title}}</h3>
-            <p class="movie-description">{{up.overview}}</p>
-
-
-        </div>-->
-          <!--</a>-->
 
       </div>
   </div>
-  
+
 </div>
+
 
 
