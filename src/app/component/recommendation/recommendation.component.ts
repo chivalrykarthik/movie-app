@@ -12,18 +12,23 @@ export class RecommendationComponent implements OnInit {
   public pageTitle: string = 'Recommendation';
   public searchResults;
   public recommendations;
+  public status: boolean;
   public movieIDs = [];
   constructor(private ds: DataService) {
 
   }
   public searchMovies(key) {
-
+    this.status = false;
     this.ds.searchMoviesByName(key).subscribe((res) => {
       if (!res || !res.results || !res.results.length) {
-        return console.log("No records found");
+        this.status = true;
+        this.searchResults=[];
+        console.log("No records found");
+      } else {
+        let movies = res;
+        this.searchResults = movies.results;
       }
-      var movies = res;
-      this.searchResults = movies.results;
+
     });
   }
 

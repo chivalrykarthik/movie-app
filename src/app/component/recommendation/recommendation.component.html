@@ -21,6 +21,7 @@
   <div class="col-md-9">
       <div id="search-results">
           <h3>Seach Results</h3>
+          <h4 *ngIf="status">No Records found.</h4>
           <list-movies [movies]="searchResults" [updCol]="4" [getRecommendation]="getRecommendation.bind(this)" [recMovies]="movieIDs"></list-movies>
 
       </div>
