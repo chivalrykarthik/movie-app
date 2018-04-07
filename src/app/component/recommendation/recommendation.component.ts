@@ -25,6 +25,7 @@ export class RecommendationComponent implements OnInit {
         this.searchResults=[];
         console.log("No records found");
       } else {
+        this.status=false;
         let movies = res;
         this.searchResults = movies.results;
       }
